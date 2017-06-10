@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 
 class Aria2Task: NSObject{
-    dynamic var gid: String = ""
+    @objc dynamic var gid: String = ""
     var status: Aria2TaskStatus = .unknown {
         didSet {
             self.statusRawValue = self.status.rawValue

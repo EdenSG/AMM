@@ -18,7 +18,7 @@ class ServerProfileMenuItem: NSMenuItem, Aria2NotificationDelegate {
     init(_ profile: ServerProfile) {
         server = profile
         server.startConnectTimer()
-        viewController = ServerProfileMenuItemViewController(nibName: "ServerProfileMenuItemViewController", bundle: nil)
+        viewController = ServerProfileMenuItemViewController(nibName: NSNib.Name(rawValue: "ServerProfileMenuItemViewController"), bundle: nil)
         viewController?.server = server
         startIndexOfActive = pref.controlModeEnabled ? 2 : 1 // Set beginning offset of task menu items
         super.init(title: server.remark, action: nil, keyEquivalent: "")
@@ -130,7 +130,7 @@ class ServerProfileMenuItem: NSMenuItem, Aria2NotificationDelegate {
     }
     
     func addUriFromClipboard() {
-        let urlText = NSPasteboard.general().string(forType: NSPasteboardTypeString)
+        let urlText = NSPasteboard.general.string(forType: NSPasteboard.PasteboardType.string)
         let urls = urlText?.components(separatedBy: "\n").filter({!$0.isEmpty}).map({$0.trimmingCharacters(in: [" "])})
         if let urls = urls {
             for url in urls {

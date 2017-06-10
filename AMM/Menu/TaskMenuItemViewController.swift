@@ -14,12 +14,12 @@ class TaskMenuItemViewController: NSViewController {
     @IBOutlet var viewDark: NSView!
     
     init() {
-        super.init(nibName: "TaskMenuItemViewController", bundle: nil)!
+        super.init(nibName: NSNib.Name(rawValue: "TaskMenuItemViewController"), bundle: nil)
     }
     
     init?(task: Aria2Task) {
         self.task = task
-        super.init(nibName: "TaskMenuItemViewController", bundle: nil)
+        super.init(nibName: NSNib.Name(rawValue: "TaskMenuItemViewController"), bundle: nil)
     }
     
     required init?(coder: NSCoder) {
