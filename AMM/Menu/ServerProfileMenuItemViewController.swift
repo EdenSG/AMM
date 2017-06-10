@@ -9,10 +9,10 @@
 import Cocoa
 
 class ServerProfileMenuItemViewController: NSViewController {
-    var server: ServerProfile? = nil
-    dynamic var status: String? = nil
-    dynamic var downloadSpeed: String? = nil
-    dynamic var uploadSpeed: String? = nil
+    @objc var server: ServerProfile? = nil
+    @objc dynamic var status: String? = nil
+    @objc dynamic var downloadSpeed: String? = nil
+    @objc dynamic var uploadSpeed: String? = nil
     var timer: DispatchSourceTimer?
 
     @IBOutlet var viewDark: NSView!

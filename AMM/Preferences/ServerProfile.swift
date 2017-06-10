@@ -18,7 +18,7 @@ class ServerProfile: NSObject, NSCopying, NSCoding {
         }
     }
     // Workaournd for enum KVO binding
-    var remark: String
+    @objc var remark: String
     var globalStatRefreshInterval: Double
     var taskStatRefreshInterval: Double
     var activeTaskMaxNum: Int

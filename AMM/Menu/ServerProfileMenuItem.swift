@@ -129,7 +129,7 @@ class ServerProfileMenuItem: NSMenuItem, Aria2NotificationDelegate {
         }
     }
     
-    func addUriFromClipboard() {
+    @objc func addUriFromClipboard() {
         let urlText = NSPasteboard.general.string(forType: NSPasteboard.PasteboardType.string)
         let urls = urlText?.components(separatedBy: "\n").filter({!$0.isEmpty}).map({$0.trimmingCharacters(in: [" "])})
         if let urls = urls {

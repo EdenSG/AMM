@@ -43,19 +43,19 @@ class TaskMenuItem: NSMenuItem {
         isDisplayed = true
     }
     
-    func pauseTask() {
+    @objc func pauseTask() {
         server?.pause(gid: task.gid)
     }
     
-    func unpauseTask() {
+    @objc func unpauseTask() {
         server?.unpause(gid: task.gid)
     }
     
-    func stopTask() {
+    @objc func stopTask() {
         server?.stop(gid: task.gid)
     }
     
-    func removeTask() {
+    @objc func removeTask() {
         server?.remove(gid: task.gid)
     }
     
